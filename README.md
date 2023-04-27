@@ -47,4 +47,4 @@ router.post('/search', async (req, res) => {
 
 ## Conclusion
 
-Thank you for taking the time to read this readme file for NextAudio backend. If you have any questions or concerns, feel free to contact [me] (mailto:mehmet@mehmetfd.dev).
+Thank you for taking the time to read this readme file for NextAudio backend. If you have any questions or concerns, feel free to contact [me](mailto:mehmet@mehmetfd.dev).
