@@ -1,9 +1,10 @@
 {
-  "name": "next-nuxt-audio-backend",
+  "name": "next-audio-backend",
   "version": "1.0.0",
-  "description": "Backend for Next/Nuxt Audio",
+  "description": "Backend for NextAudio",
   "main": "index.js",
   "author": "Mehmet F. Dogan",
+  "private": true,
   "scripts": {
     "build": "npx tsc"
   },
