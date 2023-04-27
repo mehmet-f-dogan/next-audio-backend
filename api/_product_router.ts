@@ -48,8 +48,8 @@ router.post('/search', async (req, res) => {
                     break;
 
                 case "Top Rated":
-                    products = products.filter(
-                        (item) => item.rating > 4
+                    products = products.sort(
+                        (a, b) => b.rating - a.rating
                     );
                     break;
 
@@ -59,7 +59,7 @@ router.post('/search', async (req, res) => {
                     );
                     break;
 
-                case "Price(Highest products)":
+                case "Price(Highest First)":
                     products = products.sort(
                         (a, b) => b.price - a.price
                     );
