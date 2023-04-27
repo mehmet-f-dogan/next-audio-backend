@@ -1,14 +1,14 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 import { db } from './_firebase';
 import { collection, query, where, getDocsFromServer, doc, setDoc } from "firebase/firestore";
 const productsRef = collection(db, "products");
 
 const router = express.Router()
 
-router.post('/complete', async (req: Request, res: Response) => {
+router.post('/complete', async (req, res) => {
     //increase number of orders per product by the amount in the cart for each product
     const { orders } = req.body;
-    orders.forEach(async (order: any) => {
+    orders.forEach(async (order: { id: unknown; quantity: any; }) => {
         const q = query(productsRef, where("id", "==", order.id));
         const querySnapshot = await getDocsFromServer(q);
         if (!querySnapshot.empty) {

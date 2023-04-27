@@ -1,11 +1,11 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 import { db } from './_firebase';
 import { collection, query, where, getDocsFromServer } from "firebase/firestore";
 const productsRef = collection(db, "products");
 
 const router = express.Router()
 
-router.get('/:id', async (req: Request, res: Response) => {
+router.get('/:id', async (req, res) => {
     const q = query(productsRef, where("id", "==", req.params.id));
     const querySnapshot = await getDocsFromServer(q);
     if (!querySnapshot.empty) {
@@ -15,7 +15,7 @@ router.get('/:id', async (req: Request, res: Response) => {
     return res.status(400).json({ message: 'Invalid product id' });
 });
 
-router.post('/search', async (req: Request, res: Response) => {
+router.post('/search', async (req, res) => {
     //given a list of brands, max price, list of categories, type of order as string, return all products that match
     const { brands, maxPrice, categories, order, tags } = req.body;
     let q = query(productsRef);

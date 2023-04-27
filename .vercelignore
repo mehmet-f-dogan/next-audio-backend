@@ -1,0 +1,7 @@
+/.yarn
+/.next
+/node_modules
+/public
+README.md
+.env.example
+/dist
